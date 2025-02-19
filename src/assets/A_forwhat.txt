@@ -1,0 +1,9 @@
+السلام عليكم 
+
+This assests folder for media like ..
+imgs
+icons
+fonts
+.
+.
+.

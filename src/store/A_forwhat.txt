@@ -1,0 +1,3 @@
+السلام عليكم 
+
+This store folder for state management with by redux
