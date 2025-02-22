@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Main_Layout from "./layouts/Main_Layout";
 
 function App() {
   return (
-    // this is example for layout we will make we add static components and add outlet that add layout children
-    <div>
-      <h1>My App Navbar</h1>
-      <Outlet />
-      <footer>Footer</footer>
-    </div>
+    <Routes>
+      {/* layouts and inside them their children  */}
+
+      {/* layout like down */}
+      <Route path="/" element={<Main_Layout />}>
+        {/* children (pages that use this layout) like down */}
+        {/* <Route index element={<Home/>}/> */}
+      </Route>
+    </Routes>
   );
 }
 

@@ -1,14 +1,14 @@
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
+import { Provider } from "react-redux";
+import { store } from "./Store/redux";
+import App from "./App";
 
-const router = createBrowserRouter([
-  // make layouts and add their children
-  { path: "/", element: <App />, children: [{ path: "/" }] },
-  // { path: "/", element: <MainLayout />, children: [{ path: "/" }] },
-]);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
