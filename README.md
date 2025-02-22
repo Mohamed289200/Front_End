@@ -1,8 +1,17 @@
-# React + Vite
+# MadEase - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend code for **MadEase**, a smart hospital system. The frontend is built using modern web technologies to provide a seamless and responsive user experience.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React:** A JavaScript library for building user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+- **State Management:** Redux for managing application state.
+- **API Communication:** Axios for making HTTP requests to the backend.
+
+## Project Structure
+
+- **`src/components`:** Reusable UI components.
+- **`src/pages`:** Main pages of the application.
+- **`src/store`:** Redux store and slices for state management.
+- **`src/assets`:** Static assets like images and styles.
