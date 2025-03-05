@@ -1,11 +1,9 @@
-import { Outlet } from "react-router-dom";
-
 const Main_Layout = () => {
   return (
     <div>
-      <div>nav</div>
-      <Outlet />
-      <div>footer</div>
+      <div>nav here</div>
+      <div>content here</div>
+      <div>footer here</div>
     </div>
   );
 };
