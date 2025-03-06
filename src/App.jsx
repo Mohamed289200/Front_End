@@ -4,6 +4,10 @@ import { Doctor_Dashboard_Layout } from "./layouts/doctor/Doctor_Dashboard_Layou
 import { Dashboard } from "./components/doctor/Dashboard/Dashboard";
 import { Messages } from "./components/doctor/Messages/Messages";
 import { Main_Grid } from "./components/doctor/Dashboard/Main_Grid";
+import Admin_Layout from "./layouts/Admin_Layout";
+import Overview from "./pages/admin/Overview";
+import Appointments from "./pages/admin/Appointments";
+import Diseases from "./pages/admin/Diseases";
 function App() {
   return (
   <Routes>
@@ -18,7 +22,12 @@ function App() {
         {/* children (pages that use this layout) like down */}
         {/* <Route index element={<Home/>}/> */}
       </Route>
-    </Routes>    
+      <Route path="/admin" element={<Admin_Layout />}>
+        <Route index element={<Overview />} />
+        <Route path="appointments" element={<Appointments />} />
+        <Route path="diseases" element={<Diseases />} />
+      </Route>
+    </Routes>
   );
 }
 
