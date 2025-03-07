@@ -5,7 +5,7 @@ import MonthlyOverviewChart from './MonthlyOverviewChart'
 
 export const Main_Grid = () => {
   return (
-    <div className='px-4 grid gap-3 grid-cols-12'>
+    <div className='px-6 py-2 grid gap-6 grid-cols-12'>
         <StatCards/> 
         <MonthlyOverviewChart/>
         <DiagnosisChart/>

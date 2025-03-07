@@ -7,7 +7,7 @@ import { Main_Grid } from "./components/doctor/Dashboard/Main_Grid";
 import Admin_Layout from "./layouts/Admin_Layout";
 import Overview from "./pages/admin/Overview";
 import Appointments from "./pages/admin/Appointments";
-import Diseases from "./pages/admin/Diseases";
+import { Diseases } from "./components/doctor/Diseases/Diseases";
 function App() {
   return (
   <Routes>
@@ -18,6 +18,7 @@ function App() {
       <Route path="tasneem" element={<Doctor_Dashboard_Layout />}>
           <Route index element={<Main_Grid />} />
           <Route path="messages" element={<Messages />} />
+          <Route path="diseases" element={<Diseases />} />
         </Route>
         {/* children (pages that use this layout) like down */}
         {/* <Route index element={<Home/>}/> */}
