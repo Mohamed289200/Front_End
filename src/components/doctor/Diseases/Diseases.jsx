@@ -9,7 +9,7 @@ export const Diseases = () => {
           Diseases
         </h1>
       </div>
-        <AddDiseaseForm token={}/>
+        <AddDiseaseForm token={"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2NhMzRlMGYyZDZlMWYzOWQzZTE3NTkiLCJuYW1lIjoidGFzbmVlbSIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE3NDEzMDUyOTQsImV4cCI6MTc0MTMxOTY5NH0.OH9MPc9snk65t9f6hZobyqBqZJ7lawHViXWlNISunK8"}/>
     </div>
   )
 }
