@@ -39,18 +39,12 @@ export async function addDisease(addedDisease, token) {
     const response = await api.post(`${baseEndpoint}`, addedDisease, {
       headers: {
         Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
       },
     });
-    
-    if (!response.data) {
-      throw new Error('No data received from server');
-    }
-    
     return response.data?.data;
   } catch (error) {
-    console.error("Error adding disease:", error.response?.data || error.message);
-    throw error; // Propagate the error to be handled by the component
+    console.error("Error adding disease", error.response?.data);
+    return null; // Changed from [] to null to be consistent with error handling
   }
 }
 
@@ -61,7 +55,7 @@ export async function editDisease(id, editedDisease, token) {
         Authorization: `Bearer ${token}`,
       },
     });
-    return response.data;
+    return response.data?.data;
   } catch (error) {
     console.error("Error editing disease", error);
     return [];
@@ -75,7 +69,7 @@ export async function deleteDisease(id, token) {
         Authorization: `Bearer ${token}`,
       },
     });
-    return response.data;
+    return response.data?.data;
   } catch (error) {
     console.error("Error deleting disease", error);
     return [];
