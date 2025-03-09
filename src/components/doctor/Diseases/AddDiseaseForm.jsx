@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addDisease } from "../../../services/DiseasesApi";
 
-const categories = ["Critical", "Severe", "Moderate", "Mild"];
+const ranks = ["critical", "severe", "moderate", "mild"];
 
 export const AddDiseaseForm = ({ token }) => {
   const [diseaseName, setDiseaseName] = useState("");
@@ -14,13 +14,15 @@ export const AddDiseaseForm = ({ token }) => {
     e.preventDefault();
     setLoading(true);
     setMessage("");
-
+  
     try {
       const response = await addDisease(
-        { name: diseaseName, rank: rank, description: description },
+        { name: diseaseName, rank: rank, description: description, diseasecategoryId: "67649b440f6377e11ffdf909" },
         token
       );
-
+  
+      console.log("API Response:", response);
+  
       if (response) {
         setMessage("Disease added successfully!");
         setDiseaseName("");
@@ -30,11 +32,13 @@ export const AddDiseaseForm = ({ token }) => {
         setMessage("Failed to add disease.");
       }
     } catch (error) {
+      console.error("API Error:", error);
       setMessage("Error: " + (error.response?.data?.message || "Something went wrong"));
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="w-full mx-auto p-6 bg-white shadow-lg rounded-lg col-span-12">
@@ -62,7 +66,7 @@ export const AddDiseaseForm = ({ token }) => {
             required
           >
             <option value="">Select a rank</option>
-            {categories.map((cat, index) => (
+            {ranks.map((cat, index) => (
               <option key={index} value={cat}>
                 {cat}
               </option>

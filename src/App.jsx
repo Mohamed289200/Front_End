@@ -2,21 +2,17 @@ import { Routes, Route } from "react-router-dom";
 import Main_Layout from "./layouts/Main_Layout";
 import { Doctor_Dashboard_Layout } from "./layouts/doctor/Doctor_Dashboard_Layout";
 import { Dashboard } from "./components/doctor/Dashboard/Dashboard";
-import { Messages } from "./components/doctor/Messages/Messages";
-import { Main_Grid } from "./components/doctor/Dashboard/Main_Grid";
-import { Doctor_Dashboard_Layout } from "./layouts/doctor/Doctor_Dashboard_Layout";
-import { Dashboard } from "./components/doctor/Dashboard/Dashboard";
-import { Messages } from "./components/doctor/Messages/Messages";
-import { Main_Grid } from "./components/doctor/Dashboard/Main_Grid";
+import { Messages } from "./pages/doctor/Messages";
+import { Main_Grid } from "./pages/doctor/Main_Grid";
 import Admin_Layout from "./layouts/Admin_Layout";
 import Overview from "./pages/admin/Overview";
 import Appointments from "./pages/admin/Appointments";
-import { Diseases } from "./components/doctor/Diseases/Diseases";
-
+import { Diseases } from "./pages/doctor/Diseases";
 import Patients from "./pages/admin/Patients";
 import Doctors from "./pages/admin/Doctors";
 import Admins from "./pages/admin/Admins";
 import Advices from "./pages/admin/Advices";
+import { Settings } from "./pages/doctor/Settings/Settings";
 function App() {
   return (
   <Routes>
@@ -28,6 +24,7 @@ function App() {
           <Route index element={<Main_Grid />} />
           <Route path="messages" element={<Messages />} />
           <Route path="diseases" element={<Diseases />} />
+          <Route path="settings" element={<Settings/>}/>
         </Route>
         {/* children (pages that use this layout) like down */}
         {/* <Route index element={<Home/>}/> */}
