@@ -18,10 +18,7 @@ export default function Diseases() {
   }, [dispatch]);
   //
   //
-  //
-  //
-  //
-  //
+
   return (
     <div>
       <div>ana el diseases page ya wald</div>
