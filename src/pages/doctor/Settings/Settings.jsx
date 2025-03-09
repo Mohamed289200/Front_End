@@ -9,6 +9,8 @@ import PasswordStrengthBar from 'react-password-strength-bar';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 
+// Settings
+
 export const Settings = () => {
     const [brandColor, setBrandColor] = useState('#37568d');
     const [showModal, setShowModal] = useState(false);
