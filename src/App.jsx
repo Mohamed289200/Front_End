@@ -7,11 +7,12 @@ import { Main_Grid } from "./pages/doctor/Main_Grid";
 import Admin_Layout from "./layouts/Admin_Layout";
 import Overview from "./pages/admin/Overview";
 import Appointments from "./pages/admin/Appointments";
-import { Diseases } from "./pages/doctor/Diseases";
+import { Diseases_doctor } from "./pages/doctor/Diseases_doctor";
 import Patients from "./pages/admin/Patients";
 import Doctors from "./pages/admin/Doctors";
 import Admins from "./pages/admin/Admins";
 import Advices from "./pages/admin/Advices";
+import Diseases from "./pages/admin/Diseases";
 import { Settings } from "./pages/doctor/Settings/Settings";
 function App() {
   return (
@@ -20,10 +21,10 @@ function App() {
 
       {/* layout like down */}
       <Route path="/" element={<Main_Layout />}>
-      <Route path="tasneem" element={<Doctor_Dashboard_Layout />}>
+      <Route path="doctor" element={<Doctor_Dashboard_Layout />}>
           <Route index element={<Main_Grid />} />
           <Route path="messages" element={<Messages />} />
-          <Route path="diseases" element={<Diseases />} />
+          <Route path="diseases" element={<Diseases_doctor />} />
           <Route path="settings" element={<Settings/>}/>
         </Route>
         {/* children (pages that use this layout) like down */}

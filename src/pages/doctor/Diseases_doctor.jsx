@@ -1,7 +1,7 @@
 import React from 'react'
 import { AddDiseaseForm } from '../../components/doctor/Diseases/AddDiseaseForm'
 
-export const Diseases = () => {
+export const Diseases_doctor = () => {
   return (
     <div className='px-4 grid gap-3 grid-cols-12'>
       <div className='border-b mb-2 pb-4 border-gray-200 col-span-12'>

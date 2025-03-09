@@ -40,14 +40,14 @@ export const RouteSelect = ({expanded}) => {
 
   return (
     <div className="space-y-1 flex-col flex ">
-      <Link to="/tasneem" onClick={() => handleRouteClick("/tasneem")}>
-        <RouteItem isSelected={selectedRoute === "/tasneem"} Icon={FiHome} title="Main Dashboard" expanded={expanded}/>
+      <Link to="/doctor" onClick={() => handleRouteClick("/doctor")}>
+        <RouteItem isSelected={selectedRoute === "/doctor"} Icon={FiHome} title="Main Dashboard" expanded={expanded}/>
       </Link>
-      <Link to="/tasneem/messages" onClick={() => handleRouteClick("/tasneem/messages")}>
-        <RouteItem isSelected={selectedRoute === "/tasneem/messages"} Icon={FiMessageCircle} title="Messages" expanded={expanded}/>
+      <Link to="/doctor/messages" onClick={() => handleRouteClick("/doctor/messages")}>
+        <RouteItem isSelected={selectedRoute === "/doctor/messages"} Icon={FiMessageCircle} title="Messages" expanded={expanded}/>
       </Link>
-      <Link to="/tasneem/diseases" onClick={() => handleRouteClick("/tasneem/diseases")}>
-        <RouteItem isSelected={selectedRoute === "/tasneem/diseases"} Icon={RiHealthBookLine} title="Diseases" expanded={expanded}/>
+      <Link to="/doctor/diseases" onClick={() => handleRouteClick("/doctor/diseases")}>
+        <RouteItem isSelected={selectedRoute === "/doctor/diseases"} Icon={RiHealthBookLine} title="Diseases" expanded={expanded}/>
       </Link>
     </div>
   );
