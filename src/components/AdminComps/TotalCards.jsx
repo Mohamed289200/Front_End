@@ -4,9 +4,7 @@ import { fetchAllPatients } from "@/store/Slices/Patients";
 import { fetchAppointments } from "@/store/Slices/Appointments";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JmMDI1YTMyNWIzYWFhYzlkZDYzZDMiLCJuYW1lIjoia2FoIiwicm9sZSI6ImRvY3RvciIsImlhdCI6MTc0MTUyOTQ4NCwiZXhwIjoxNzQxNTQzODg0fQ.QpHJO0bp04wuT3-qnFW8xC-r2f6UFgYxidRyUxK0vzQ";
+import { fetchAllNurses } from "@/store/Slices/Nurses";
 
 export default function TotalCards() {
   const dispatch = useDispatch();
@@ -25,24 +23,35 @@ export default function TotalCards() {
     loading: appointmentsLoading,
     error: appointmentsError,
   } = useSelector((state) => state.appointments);
+  const {
+    items: nurses,
+    loading: nursesLoading,
+    error: nursesError,
+  } = useSelector((state) => state.nurses);
 
   useEffect(() => {
-    dispatch(fetchAllPatients(token));
-    dispatch(fetchAllDoctors(token));
-    dispatch(fetchAppointments(token));
+    dispatch(fetchAllPatients(localStorage.getItem("token")));
+    dispatch(fetchAllDoctors(localStorage.getItem("token")));
+    dispatch(fetchAppointments(localStorage.getItem("token")));
+    dispatch(fetchAllNurses(localStorage.getItem("token")));
   }, [dispatch]);
 
-  if (patientsLoading || doctorsLoading || appointmentsLoading) {
+  if (
+    patientsLoading ||
+    doctorsLoading ||
+    appointmentsLoading ||
+    nursesLoading
+  ) {
     return <div>Loading...</div>;
   }
 
-  if (patientsError || doctorsError || appointmentsError) {
+  if (patientsError || doctorsError || appointmentsError || nursesError) {
     return <div>Error...</div>;
   }
 
   return (
     <div className="">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4 auto-rows-fr">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-2 auto-rows-fr">
         <Card
           title="Total Patients"
           value={patients && patients.length}
@@ -56,6 +65,13 @@ export default function TotalCards() {
           pillText="+5"
           trend="up"
           period="to 1/5"
+        />
+        <Card
+          title="Total Nurses"
+          value={nurses && nurses.length}
+          pillText="-10%"
+          trend="down"
+          period="vs last month"
         />
         <Card
           title="Total Appointments"
