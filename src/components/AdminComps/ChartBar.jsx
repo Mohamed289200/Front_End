@@ -155,7 +155,7 @@ export function ChartBar({ appointments }) {
             <button
               className={`px-4 py-2 rounded-md ${
                 chartType === "day"
-                  ? "bg-blue-500 text-white"
+                  ? "bg-[#37568d] text-white"
                   : "bg-gray-200 text-gray-800"
               }`}
               onClick={toggleChartType}

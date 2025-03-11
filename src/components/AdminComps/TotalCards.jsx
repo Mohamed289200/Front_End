@@ -5,6 +5,7 @@ import { fetchAppointments } from "@/store/Slices/Appointments";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllNurses } from "@/store/Slices/Nurses";
+import ProgressBar from "@/components/ProgressBar";
 
 export default function TotalCards() {
   const dispatch = useDispatch();
@@ -36,46 +37,41 @@ export default function TotalCards() {
     dispatch(fetchAllNurses(localStorage.getItem("token")));
   }, [dispatch]);
 
-  if (
-    patientsLoading ||
-    doctorsLoading ||
-    appointmentsLoading ||
-    nursesLoading
-  ) {
-    return <div>Loading...</div>;
-  }
-
-  if (patientsError || doctorsError || appointmentsError || nursesError) {
-    return <div>Error...</div>;
-  }
+  const loading = () => {
+    return <ProgressBar />;
+  };
 
   return (
     <div className="">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-2 auto-rows-fr">
+      <div className="grid grid-cols-1 sm:grid-cols-2  gap-2 auto-rows-fr">
         <Card
           title="Total Patients"
-          value={patients && patients.length}
+          value={patientsLoading ? loading() : patients && patients.length}
           pillText="+20"
           trend="up"
           period="to 1/5"
         />
         <Card
           title="Total Doctors"
-          value={doctors && doctors.length}
+          value={doctorsLoading ? loading() : doctors && doctors.length}
           pillText="+5"
           trend="up"
           period="to 1/5"
         />
         <Card
           title="Total Nurses"
-          value={nurses && nurses.length}
+          value={nursesLoading ? loading() : nurses && nurses.length}
           pillText="-10%"
           trend="down"
           period="vs last month"
         />
         <Card
           title="Total Appointments"
-          value={appointments && appointments.length}
+          value={
+            appointmentsLoading
+              ? loading()
+              : appointments && appointments.length
+          }
           pillText="-10%"
           trend="down"
           period="vs last month"
