@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import React, { useEffect, useState } from "react";
-import profile from "../../../assets/doctor-F.png";
+import profile from "../../../src/assets/doctor-F.png";
 import PasswordStrengthBar from "react-password-strength-bar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
