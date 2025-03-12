@@ -4,7 +4,7 @@ import Admin_Layout from "./layouts/Admin_Layout";
 import Overview from "./pages/admin/Overview";
 import Appointments from "./pages/admin/Appointments";
 import Diseases from "./pages/admin/Diseases";
-import Patients from "./pages/admin/Patients";
+//import Patients from "./pages/admin/Patients";
 import Doctors from "./pages/admin/Doctors";
 import Admins from "./pages/admin/Admins";
 import Advices from "./pages/admin/Advices";
